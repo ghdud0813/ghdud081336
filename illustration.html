@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Illustration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            background: #B2CCFF;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header .categories {
+            display: flex;
+            justify-content: center;
+        }
+
+        header .categories button {
+            background: #B2CCFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        header .categories button:hover {
+            background: #A3BFFF;
+        }
+
+        main {
+            width: 100%;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .slider {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slides img {
+            flex-shrink: 0;
+            max-width: 300px; /* 미리보기 크기 */
+            margin: auto;
+            cursor: pointer;
+        }
+
+        /* 모달 스타일 */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .modal .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="color: white;"><a href="index.html" style="color: white; text-decoration: none;">My Animation Portfolio</a></h1>
+        <div class="categories">
+            <button onclick="window.location.href='illustration.html'">Illustration</button>
+            <button onclick="window.location.href='2d_animation.html'">2D Animation</button>
+            <button onclick="window.location.href='3d_animation.html'">3D Animation</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- 배경일러스트 슬라이드 -->
+        <div class="slider">
+            <h2>배경일러스트</h2>
+            <div class="slides">
+                <img src="https://postfiles.pstatic.net/MjAyMzAxMTFfMjg2/MDAxNjczMzY0MzE0NjAx.1uPTij4TbFvSeXMGpc7eFZkEMIJi-6SaNS4olKMoaa4g.mli1XYZ9NXiFJPEothiDlKYA5Pfo3qSIjIsD6LEziDsg.PNG.ghdud081336/%EB%A7%A4%EB%89%B4%EC%96%BC%EC%BB%A8%ED%8B%B0%EB%89%B42.png" alt="Illustration 1" onclick="openModal(this.src)">
+                <img src="https://postfiles.pstatic.net/MjAyMzExMTdfMjI2/MDAxNzAwMTY0NjgzMDQ0._-VNBBmTuYyAz4CmIxNkDIZcwEavE0t87_tjtNxQjeIg.o6b4Rte6JqCj_bcFuLnPujR_EAdYE2Fj4dy-EloovtEg.PNG.ghdud081336/%EA%B3%BC%EA%B1%B0%EC%9C%A0%EC%97%B0.png" alt="Illustration 2" onclick="openModal(this.src)">
+                <img src="https://postfiles.pstatic.net/MjAyMzAxMjJfMjA3/MDAxNjc0MzkzNDc4NDQw.VT1qEcIHaVkm5yYb1rW972wxHAZBJP5Fd5jTaE7siYsg.ldK9yqGMogLHnnMBqQvR0-D2MapCGL616X-RquyfBOcg.PNG.ghdud081336/%EB%A6%AC%EA%BD%81%EB%8B%98_A%EB%B2%84%EC%A0%84.png" alt="Illustration 3" onclick="openModal(this.src)">
+                <img src="https://postfiles.pstatic.net/MjAyMzAxMTBfMjIw/MDAxNjczMzYyMzIxMTg0.F7rfpI1GKuvNyCFzySeqPC6FgZP6ROjjVgjtPUSFxJAg.bv5ZfDpt90zHJg9Kgarvz9U5zasXvweEX99EcQCr6pYg.PNG.ghdud081336/%EC%A7%80%EC%98%81%EC%9E%90%EC%BA%902.png" alt="Illustration 4" onclick="openModal(this.src)">
+            </div>
+        </div>
+
+        <!-- 풀채색 슬라이드 -->
+        <div class="slider">
+            <h2>풀채색</h2>
+            <div class="slides">
+                <img src="https://postfiles.pstatic.net/MjAyMzAxMTdfMjM5/MDAxNzAwMTY0NTkwMDg4.6jptwhex9gzL55zC6gWV-OiJ7Y9sRGhmhOGNhZjO8t0g.F1eNvF7HvOOyMxl0ToxHUF7Yrv-iu0bmj1C1cgPW1DMg.PNG.ghdud081336/%EC%BB%A4%EB%AF%B8%EC%85%98_%EC%8B%A0%EC%B2%AD%EB%8B%98_%EB%AF%B8%EC%9D%B8_%EB%91%90%EC%83%81%EF%BC%92.png?type=w3840" alt="Illustration 1" onclick="openModal(this.src)">
+                <img src="https://postfiles.pstatic.net/MjAyMzAxMTdfMTky/MDAxNzAwMTY0NDY0NjAy.0UNBP2Dqkts4tkcFSNwPprSsOGdE4izzCYAbBOU2COkg._9Mjo3qSHMDOflyGuVzddRbiGyPn7FYVpWiLuiobbD0g.PNG.ghdud081336/%EB%8F%84%EB%A0%A8%EB%8B%98_%EC%BB%A4%EB%AF%B8%EC%85%98(%EA%B0%80%EB%A9%B4X).png?type=w3840" alt="Illustration 2" onclick="openModal(this.src)">
+                <img src="https://postfiles.pstatic.net/MjAyMzAxMTBfMTA0/MDAxNjczMzYyMjI0OTk1.YJcv1l5XN_W6j0cUrMLzfTx6H0abC65-5aGnwN5S28Qg.evcY5n02CNXtzhiPrMsp3xc13XKQnFQZXQdk5ccXNtYg.PNG.ghdud081336/%EC%82%AC%EB%9E%91%EC%9D%98_%EB%A7%8C%EC%8B%A0%EC%B0%BD%EC%9D%B4%EB%8B%98_%EC%BB%A4%EB%AF%B8%EC%85%98.png?type=w3840" alt="Illustration 3" onclick="openModal(this.src)">
+            </div>
+        </div>
+
+        <!-- 간단채색 슬라이드 -->
+        <div class="slider">
+            <h2>간단채색</h2>
+            <div class="slides">
+                <img src="https://postfiles.pstatic.net/MjAyMzAxMTBfMjQ5/MDAxNjczMzYxNjk1NjAy.3-mgFPqP6mzn3tZq0ztr0HxZEUh9zpHqvJjz3sd_pCQg.FQKXuuM-qqo-b8JedU6-XmySeCCvb_f

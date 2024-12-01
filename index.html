@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #F9F5EB;
+        }
+
+        header {
+            width: 100%;
+            background: #B2CCFF;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header .categories {
+            display: flex;
+            justify-content: center;
+        }
+
+        header .categories button {
+            background: #B2CCFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        header .categories button:hover {
+            background: #A3BFFF;
+        }
+
+        main {
+            width: 80%;
+            margin-top: 20px;
+            opacity: 1;
+            transition: opacity 1s;
+        }
+
+        .main-video {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .main-video iframe {
+            width: 100%;
+            height: 500px;
+            border-radius: 8px;
+        }
+
+        .thumbnail-slider {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
+            width: 100%;
+            padding: 10px 0;
+        }
+
+        .thumbnail-slider img {
+            width: 100%;
+            height: 120px; /* 세로 길이를 고정 */
+            object-fit: cover; /* 잘림 허용 */
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease; /* 확대 애니메이션 */
+        }
+
+        .thumbnail-slider img:hover {
+            transform: scale(1.1);
+        }
+
+        .full-image {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            max-height: 90%;
+            display: none;
+            z-index: 1000;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            border-radius: 10px;
+            animation: zoomIn 0.5s ease-in-out forwards;
+            overflow: auto; /* 이미지가 커지면 스크롤이 생기도록 설정 */
+        }
+
+        .full-image img {
+            width: 100%;
+            height: auto; /* 원본 비율 유지 */
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        @keyframes zoomIn {
+            0% {
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="color: white;">My Animation Portfolio</h1>
+        <div class="categories">
+            <button onclick="window.location.href='illustration.html'">Illustration</button>
+            <button onclick="window.location.href='2d_animation.html'">2D Animation</button>
+            <button onclick="window.location.href='3d_animation.html'">3D Animation</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-video">
+            <iframe src="https://www.youtube.com/embed/XL4A2gADuMg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div class="thumbnail-slider">
+            <img src="https://postfiles.pstatic.net/MjAyMzAxMTBfMTc2/MDAxNjczMzYyMjI1MTM2.wFItHm2I76upfHrsNUpXo7IjJIwowNzf1YopstecAoUg.2xOlOaceZUk1Pbq8ZHVUxTd8coR5rt2MbNFy8lQzz1Eg.PNG.ghdud081336/%EB%A7%88%EB%A7%88%EB%8B%A4%ED%9D%AC.png?type=w3840" alt="Thumbnail 1" onclick="showImage(this)">
+            <img src="https://postfiles.pstatic.net/MjAyMzAxMTBfMjIw/MDAxNjczMzYyMzIxMTg0.F7rfpI1GKuvNyCFzySeqPC6FgZP6ROjjVgjtPUSFxJAg.bv5ZfDpt90zHJg9Kgarvz9U5zasXvweEX99EcQCr6pYg.PNG.ghdud081336/%EC%A7%80%EC%98%81%EC%9E%90%EC%BA%902.png?type=w773" alt="Thumbnail 2" onclick="showImage(this)">
+            <img src="https://postfiles.pstatic.net/MjAyMzAxMTFfMjg2/MDAxNjczMzY0MzE0NjAx.1uPTij4TbFvSeXMGpc7eFZkEMIJi-6SaNS4olKMoaa4g.mli1XYZ9NXiFJPEothiDlKYA5Pfo3qSIjIsD6LEziDsg.PNG.ghdud081336/%EB%A7%A4%EB%89%B4%EC%96%BC%EC%BB%A8%ED%8B%B0%EB%89%B42.png?type=w3840" alt="Thumbnail 3" onclick="showImage(this)">
+            <img src="https://postfiles.pstatic.net/MjAyMzExMTdfMjI2/MDAxNzAwMTY0NjgzMDQ0._-VNBBmTuYyAz4CmIxNkDIZcwEavE0t87_tjtNxQjeIg.o6b4Rte6JqCj_bcFuLnPujR_EAdYE2Fj4dy-EloovtEg.PNG.ghdud081336/%EA%B3%BC%EA%B1%B0%EC%9C%A0%EC%97%B0.png?type=w3840" alt="Thumbnail 4" onclick="showImage(this)">
+            <img src="https://postfiles.pstatic.net/MjAyMzAxMTBfNTMg/MDAxNjczMzYyMjk3OTYy.BeU2Hv3h8cP70Ted9cuXhX867je9UZAbaKosUTFALrcg.MiswW8nSe3ykWrlxMH4JI2Bcv8UtgKyCG2WeeNguBPcg.PNG.ghdud081336/%EC%9E%84%EC%98%90%EB%8B%98_%EC%BB%A4%EB%AF%B8%EC%85%98(%EC%9B%83%EC%9D%8C).png?type=w3840" alt="Thumbnail 5" onclick="showImage(this)">
+            <img src="https://postfiles.pstatic.net/MjAyMzAxMjJfMjA3/MDAxNjc0MzkzNDc4NDQw.VT1qEcIHaVkm5yYb1rW972wxHAZBJP5Fd5jTaE7siYsg.ldK9yqGMogLHnnMBqQvR0-D2MapCGL616X-RquyfBOcg.PNG.ghdud081336/%EB%A6%AC%EA%BD%81%EB%8B%98_A%EB%B2%84%EC%A0%84.png?type=w3840" alt="Thumbnail 6" onclick="showImage(this)">
+        </div>
+    </main>
+
+    <div class="full-image" id="fullImageContainer" onclick="closeImage()">
+        <img id="fullImage" src="" alt="Full Image">
+    </div>
+
+    <script>
+        function showImage(imgElement) {
+            var fullImageContainer = document.getElementById("fullImageContainer");
+            var fullImage = document.getElementById("fullImage");
+            fullImage.src = imgElement.src;
+            fullImageContainer.style.display = "block";
+        }
+
+        function closeImage() {
+            document.getElementById("fullImageContainer").style.display = "none";
+        }
+    </script>
+</body>
+</html>

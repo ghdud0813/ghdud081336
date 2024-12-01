@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Animation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            background: #B2CCFF;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header .categories {
+            display: flex;
+            justify-content: center;
+        }
+
+        header .categories button {
+            background: #B2CCFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        header .categories button:hover {
+            background: #A3BFFF;
+        }
+
+        main {
+            width: 90%;
+            margin-top: 20px;
+        }
+
+        .main-video {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .main-video iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            border: none;
+        }
+
+        .small-videos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .small-videos iframe {
+            flex: 1 1 calc(33.333% - 10px);
+            max-width: 300px;
+            height: 200px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="color: white;"><a href="index.html" style="color: white; text-decoration: none;">3D Animation</a></h1>
+        <div class="categories">
+            <button onclick="window.location.href='illustration.html'">Illustration</button>
+            <button onclick="window.location.href='2d_animation.html'">2D Animation</button>
+            <button onclick="window.location.href='3d_animation.html'">3D Animation</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-video">
+            <iframe src="https://www.youtube.com/embed/XL4A2gADuMg" title="3D Animation Main"></iframe>
+        </div>
+        <div class="small-videos">
+            <iframe src="https://www.youtube.com/embed/QgAqmShWOv4" title="3D Animation 1"></iframe>
+        </div>
+    </main>
+</body>
+</html>
